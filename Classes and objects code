@@ -1,0 +1,40 @@
+# Step 1: Define the class (blueprint)
+class Dog:
+    # This is the constructor - runs automatically when we create a dog
+    def __init__(self, name, age, color):
+        self.name = name     # attribute (data)
+        self.age = age
+        self.color = color
+        self.energy = 100    # starting energy level
+
+    # Method (behavior/action)
+    def bark(self):
+        print(f"{self.name} says: Woof woof! 🐶")
+
+    def sleep(self):
+        self.energy = 100
+        print(f"{self.name} is sleeping... zzz... Energy now full!")
+
+    def play(self):
+        if self.energy >= 30:
+            self.energy -= 30
+            print(f"{self.name} is running and playing! Energy left: {self.energy}")
+        else:
+            print(f"{self.name} is too tired to play... 😴")
+
+# Step 2: Create objects (real dogs from the blueprint)
+dog1 = Dog("Buddy", 3, "brown")
+dog2 = Dog("Luna", 1, "white")
+
+# Step 3: Use the objects
+print(f"{dog1.name} is {dog1.age} years old and {dog1.color}")
+print(f"{dog2.name} is {dog2.age} years old and {dog2.color}")
+
+dog1.bark()
+dog2.bark()
+
+dog1.play()
+dog1.play()
+dog1.play()          # should get tired
+dog1.sleep()         # recover energy
+dog1.play()          # can play again
