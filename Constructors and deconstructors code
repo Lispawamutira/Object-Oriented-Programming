@@ -1,0 +1,18 @@
+class Student:
+    # Constructor - runs when object is created
+    def __init__(self, name, age):
+        self.name = name      # save the name
+        self.age = age        # save the age
+        print(f"Student {self.name} is created!")
+
+    # Destructor - runs when object is deleted
+    def __del__(self):
+        print(f"Student {self.name} is deleted. Goodbye!")
+
+# Creating objects (constructor runs)
+s1 = Student("John", 15)
+s2 = Student("Mary", 14)
+
+# Deleting objects (destructor runs)
+del s1          # this calls destructor for s1
+del s2          # this calls destructor for s2
